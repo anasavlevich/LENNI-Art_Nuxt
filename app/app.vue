@@ -2,7 +2,7 @@
   <div class="app">
     <PageHeader class="app__header" />
     <main class="app__main">
-      <!-- <NuxtPage class="app__page" /> -->
+      <NuxtPage class="app__page" />
     </main>
     <PageFooter class="app__footer" />
   </div>
