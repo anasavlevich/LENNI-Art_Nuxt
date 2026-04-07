@@ -6,7 +6,7 @@
         </div>
         <button type="button" class="more-btn app-listing__more-btn">
             Показать всё
-            <SvgIcon class="more-btn__arrow" name="arrow_down" width="62" height="92" />
+            <SvgIcon class="more-btn__arrow" name="arrow" width="92" height="62" />
         </button>
     </section>
 </template>
@@ -74,34 +74,41 @@ const props = defineProps({
     }
 
     &__card {
-    width: calc(33.3333% - 58px);
-    margin: 0 29px 120px;
-    @media @bw1660 {
-      width: calc(33.3333% - 40px);
-      margin: 0 20px 90px;
+        width: calc(33.3333% - 58px);
+        margin: 0 29px 120px;
+
+        @media @bw1660 {
+            width: calc(33.3333% - 40px);
+            margin: 0 20px 90px;
+        }
+
+        @media @bw1340 {
+            width: calc(33.3333% - 40px);
+            max-width: 405px;
+            margin: 0 17px 70px;
+        }
+
+        @media @bw1020 {
+            width: calc(50% - 30px);
+            max-width: 405px;
+            margin: 0 15px 80px;
+        }
+
+        @media @bw768 {
+            margin: 0 10px 80px;
+            width: 100%;
+            margin: 0 0 60px;
+        }
     }
-    @media @bw1340 {
-      width: calc(33.3333% - 40px);
-      max-width: 405px;
-      margin: 0 17px 70px;
-    }
-    @media @bw1020 {
-      width: calc(50% - 30px);
-      max-width: 405px;
-      margin: 0 15px 80px;
-    }
-    @media @bw768 {
-      margin: 0 10px 80px;
-      width: 100%;
-      margin: 0 0 60px;
-    }
-  }
 
     &__more-btn {
         display: inline-flex;
         flex-direction: column;
         gap: 35px 0;
         align-self: center;
+        align-items: center;
+        background-color: transparent;
+        border-color: transparent;
         font-family: @font1;
         font-weight: 600;
         font-size: 16px;
@@ -114,9 +121,8 @@ const props = defineProps({
             cursor: pointer;
         }
     }
-
-    &.more-btn__arrow {
-        transform: rotate(90deg);
-    }
+}
+.more-btn__arrow {
+    transform: rotate(90deg);
 }
 </style>
