@@ -20,7 +20,8 @@ useHead({
   },
   bodyAttrs: {
     class: {
-      "overflow-nav": () => store.navActive
+      "overflow-nav": () => store.navActive,
+      overflow: () => store.getModal,
     }
   },
   title: "Lenni Art",
