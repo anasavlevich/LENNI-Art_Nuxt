@@ -1,26 +1,152 @@
 <template>
-  <form class="subscribe-form">
+  <form class="subscribe-form" novalidate @submit.prevent="onSubmit">
     <h4 class="subscribe-form__title">
       Подпишись и будь в курсе происходящего
     </h4>
+    <div class="subscribe-form__wrapper">
+      <div class="subscribe-form__field-wrapper">
+        <input v-model="email" type="email" placeholder="Email" class="field__input subscribe-form__input" required />
+        <span v-if="submitCount && (!email || !emailIsValid)" class="subscribe-form__error field-error">
+          {{
+            email && !emailIsValid
+              ? "Email указан неверно"
+              : "Это поле обязательно"
+          }}
+        </span>
+      </div>
+      <button type="submit" class="btn subscribe-form__submit">Подписаться</button>
+    </div>
+    <label class="subscribe-form__check check">
+      <span class="subscribe-form__check-caption check__caption--s">
+        Согласен на обработку персональных данных
+      </span>
+      <input v-model="agreement" :true-value="1" :false-value="0" type="checkbox" class="check__input" required />
+      <span class="check__mark"></span>
+    
+    <span v-if="submitCount && !agreement" class="subscribe-form__error subscribe-form__check-error field-error">
+      Это поле обязательно
+    </span>
+    </label>
   </form>
 </template>
 
-<style lang="less">
-  .subscribe-form {
-    width: 405px;
-    max-width: 100%;
+<script setup>
+const email = ref("");
+const agreement = ref(0);
+const submitCount = ref(0);
+const emailIsValid = computed(() => {
+  return /^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,6}$/.test(email.value);
+});
+const onSubmit = () => {
+  submitCount.value += 1;
+  if (!email.value || !emailIsValid.value || !agreement.value) return;
+  console.log({ email: email.value, agreement: agreement.value });
+  alert("Подписка оформлена");
+};
 
-    &__title {
-      margin: 0 0 25px;
-      font-size: 16px;
-      line-height: 22px;
-      @media @bw500 {
-        margin: 0 0 15px;
-        font-weight: 400;
-        font-size: 13px;
-        line-height: 18px;
-      }
+</script>
+
+<style lang="less">
+.subscribe-form {
+  width: 405px;
+  max-width: 100%;
+
+  &__title {
+    margin: 0 0 25px;
+    font-size: 16px;
+    line-height: 22px;
+
+    @media @bw500 {
+      margin: 0 0 15px;
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 18px;
     }
   }
+
+  &__wrapper {
+    display: inline-flex;
+    flex-direction: row;
+    margin-top: 14px;
+    margin-left: 17px;
+
+    @media @bw650 {
+      display: grid;
+      grid-template-areas: "input btn";
+      grid-template-columns: 80% 23%;
+    }
+
+    @media @bw600 {
+      grid-template-columns: 80% 23%;
+    }
+
+    @media @bw500 {
+      grid-template-columns: 72% 30%;
+    }
+
+    @media @bw370 {
+      grid-template-columns: 50% 30%;
+      max-width: fit-content;
+    }
+  }
+
+  &__field-wrapper {
+    @media @bw650 {
+      max-width: none;
+      grid-area: input;
+    }
+  }
+
+  &__input {
+    border-radius: 0;
+    max-height: 49px;
+  }
+
+  &__submit {
+    max-height: 49px;
+    background-color: @black;
+    color: @white;
+    font-weight: 400;
+    font-size: 14px;
+    border: none;
+
+    &:hover {
+      background-color: @red_dark;
+    }
+
+    @media @bw768 {
+      padding: 10px 35px 10px 25px;
+    }
+
+    @media @bw650 {
+      grid-area: btn;
+      padding: 10px auto 10px auto;
+    }
+
+    @media @bw600 {
+      padding-left: 15px;
+    }
+
+    @media @bw400 {
+      padding-left: 10px;
+    }
+  }
+
+  &__check {
+    margin-left: 17px;
+  }
+
+  &__check-caption {
+    margin-left: 15px;
+    font-weight: 300;
+    font-size: 14px;
+
+    @media @bw370 {
+      max-width: 260px;
+    }
+  }
+  &__check-error {
+    margin-left: -25px;
+  }
+}
 </style>

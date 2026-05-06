@@ -26,18 +26,18 @@ const props = defineProps({
         default: "",
     },
     name: {
-      type: String,
-      required: true,
+        type: String,
+        required: true,
     },
 });
 const store = useStore();
-  const isActive = computed(() => {
+const isActive = computed(() => {
     return props.name ? store.modal[props.name] : null;
-  });
+});
 
-  const close = () => {
+const close = () => {
     if (props.name) store.closeModal(props.name);
-  };
+};
 </script>
 
 <style lang="less">
@@ -72,6 +72,14 @@ const store = useStore();
         @media @bw960 {
             min-width: 110%;
         }
+    }
+
+    &__container {
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 950px;
+        margin: 0 auto;
+        padding: 0 40px 40px;
     }
 
     &__sticky-close {

@@ -23,11 +23,14 @@
     </header>
     <div class="event__container">
       <div class="content event__content" v-html="data.content"></div>
+      <EventReserve class="event__reserve" />
     </div>
   </article>
 </template>
 
 <script setup>
+import EventReserve from '~/components/event/EventReserve.vue';
+
 const slug = computed(() => useRoute().params.event);
 const URL = computed(
   () => `http://localhost:3000/json/events/${slug.value}.json`,

@@ -1,0 +1,6 @@
+<template>
+    <label class="field">
+        <span class="field__title">Есть пожелания? Напишите нам:</span>
+        <textarea class="field__textarea" name="Пожелания"></textarea>
+    </label>
+</template>

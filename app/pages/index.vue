@@ -1,7 +1,10 @@
 <template>
   <div>
+    <AppIntro/>
     <AppOffers/>
+    <AppAbout/>
     <EventsUpcoming/>
+    <AppBlog/>
     <AppContacts/>
   </div>
 </template>
