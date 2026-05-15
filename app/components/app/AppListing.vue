@@ -1,13 +1,14 @@
 <template>
     <section class="app-listing">
         <h1 class="app-listing__title section-title">{{ title }}</h1>
-        <div class="app-listing__list">
-            <slot />
+        <div :class="listClass">
+            <slot :list="list" />
         </div>
-        <button type="button" class="more-btn app-listing__more-btn">
+        <button v-if="moreBtn" type="button" class="more-btn app-listing__more-btn">
             Показать всё
             <SvgIcon class="more-btn__arrow" name="arrow" width="92" height="62" />
         </button>
+        <a v-else-if="moreLink" href="#" class="app-listing__link link">Смотреть все</a>
     </section>
 </template>
 
@@ -17,7 +18,31 @@ const props = defineProps({
         type: String,
         default: "",
     },
+    url: {
+        type: String,
+        default: "",
+        requared: true,
+    },
+    moreBtn: {
+        type: Boolean,
+        default: false,
+    },
+    moreLink: {
+        type: Boolean,
+        default: false,
+    },
+    grid: {
+        type: String,
+        default: "",
+    },
 });
+const listClass = computed(() => props.grid === 'column' ? "app-listing__column-list" : "app-listing__list")
+const list = ref([]);
+const { data } = props.url ? await useAsyncData('list-${props.url}', () => {
+    return $fetch(props.url);
+}) : { data: null };
+
+if (data?.value) list.value = data.value;
 </script>
 
 <style lang="less">
@@ -48,6 +73,12 @@ const props = defineProps({
             min-width: 280px;
             margin-left: -12%;
         }
+    }
+
+    &__column-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     &__list {
@@ -122,6 +153,7 @@ const props = defineProps({
         }
     }
 }
+
 .more-btn__arrow {
     transform: rotate(90deg);
 }

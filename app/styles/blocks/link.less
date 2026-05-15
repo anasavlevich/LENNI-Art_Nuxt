@@ -1,0 +1,20 @@
+.link {
+  flex-shrink: 0;
+  align-self: flex-start;
+  display: block;
+  width: 467px;
+  margin-right: 60px;
+  font-size: 0;
+  text-decoration: none;
+  &:hover {
+    & ~ .article-card__info {
+      .article-card__title-link {
+        color: @red;
+        text-decoration-color: @red;
+      }
+    }
+  }
+  @media @bw1020 {
+    width: 100%;
+  }
+}

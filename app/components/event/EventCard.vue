@@ -6,11 +6,8 @@
 
                 <img :src="data.img" :alt="data.alt" class="event-card__img" />
             </picture>
-
             <h4 class="event-card__title">{{ data.title }}</h4>
-
             <p class="event-card__description">{{ data.description }}</p>
-
             <time v-if="date" :datetime="data.date" class="event-card__time">
                 {{ date }}
             </time>
