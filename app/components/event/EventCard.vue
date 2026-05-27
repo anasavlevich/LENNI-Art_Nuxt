@@ -112,6 +112,7 @@ const date = computed(() => {
 
         @media @bw768 {
             min-height: 50px;
+            font-weight: 700;
             font-size: 16px;
         }
     }

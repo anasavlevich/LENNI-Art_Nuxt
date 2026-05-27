@@ -26,6 +26,7 @@
         font-size: 45px;
         line-height: 1.29;
         text-transform: uppercase;
+
         @media @bw1660 {
             font-size: 35px;
         }
@@ -43,40 +44,8 @@
         }
     }
 
-    &__pic {
-        overflow: hidden;
-    }
-
-    &__img {
-        display: block;
-        position: relative;
-        width: 100%;
-        margin: 0 auto 25px;
-        font-size: 0;
-        text-decoration: none;
-
-        @media @bw1660 {
-            width: 120%;
-            margin-left: -11%;
-        }
-
-        @media @bw960 {
-            width: 150%;
-            margin-left: -26%;
-        }
-
-        @media @bw768 {
-            width: 160%;
-            margin-left: -31%;
-        }
-
-        @media @bw600 {
-            width: 170%;
-            margin-left: -36%;
-        }
-    }
-
     &__title1 {
+        margin-top: 100px;
         margin-bottom: 70px;
 
         @media @bw1660 {
@@ -88,6 +57,7 @@
         }
 
         @media @bw768 {
+            margin-top: 80px;
             margin-bottom: -60px;
         }
 
@@ -125,6 +95,39 @@
         @media @bw400 {
             margin-top: -110px;
             margin-bottom: 40px;
+        }
+    }
+
+    &__pic {
+        overflow: hidden;
+    }
+
+    &__img {
+        display: block;
+        position: relative;
+        width: 100%;
+        margin: 0 auto 25px;
+        font-size: 0;
+        text-decoration: none;
+
+        @media @bw1660 {
+            width: 120%;
+            margin-left: -11%;
+        }
+
+        @media @bw960 {
+            width: 150%;
+            margin-left: -26%;
+        }
+
+        @media @bw768 {
+            width: 160%;
+            margin-left: -31%;
+        }
+
+        @media @bw600 {
+            width: 170%;
+            margin-left: -36%;
         }
     }
 }

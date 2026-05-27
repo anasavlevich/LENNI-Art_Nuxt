@@ -40,7 +40,7 @@
                 <a href="#" class="app-about__link">
                     <span class="app-about__link-text">Смотреть</span>                    
                     <button type="button" class="app-about__link-arrow arrow">
-                        <SvgIcon class="arrow__icon" name="arrow" width="92" height="62" />
+                        <SvgIcon class="arrow__icon" name="arrow" width="91" height="60" />                        
                     </button>
                 </a>
             </div>
@@ -66,6 +66,9 @@
     margin-bottom: 100px;
     display: flex;
     flex-direction: column;
+    @media @bw600 {
+      margin-bottom: 60px;
+    }
   }
 
   &__block2 {
@@ -77,7 +80,6 @@
       "pic1 pic2"
       "title pic2"
       "text text";
-    margin-bottom: 75px;
     @media @bw960 {
       grid-template-areas:
         "pic1 pic1"
@@ -89,6 +91,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      margin-bottom: 50px;
     }
   }
 

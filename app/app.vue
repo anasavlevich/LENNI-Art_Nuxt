@@ -64,8 +64,8 @@ useHead({
     },
     {
       rel: "icon",
-      type: "image/png",
-      href: "/favicons/favicon-32x32.png",
+      type: "image/vnd.microsoft.icon",
+      href: "/favicons/favicon-32x32.ico",
       sizes: "32x32",
     },
     {

@@ -3,11 +3,11 @@
     <h1 class="section-title">контакты</h1>
     <div class="app-contacts__container">
       <TheMap class="app-contacts__map" />
-      <div class="app-contacts__info">        
+      <div class="app-contacts__info">
         <div class="app-contacts__adress">
           <div class="app-contacts__location">
             <picture class="app-contacts__location-pic">
-              <source media="(max-width: 370px)" srcset="assets/images/contacts_icons/location_mobile.jpg" />
+              <source media="(max-width: 499px)" srcset="assets/images/contacts_icons/location_mobile.jpg" />
               <img src="assets/images/contacts_icons/location.jpg" class="app-contacts__location-img" alt="location" />
             </picture>
           </div>
@@ -22,7 +22,7 @@
         <div class="app-contacts__rent">
           <div class="app-contacts__home">
             <picture class="app-contacts__home-pic">
-              <source media="(max-width: 370px)" srcset="assets/images/contacts_icons/home_mobile.jpg" />
+              <source media="(max-width: 499px)" srcset="assets/images/contacts_icons/home_mobile.jpg" />
               <img src="assets/images/contacts_icons/home.jpg" class="app-contacts__home-img" alt="home" />
             </picture>
           </div>
@@ -35,7 +35,7 @@
         <div class="app-contacts__events">
           <div class="app-contacts__star">
             <picture class="app-contacts__star-pic">
-              <source media="(max-width: 370px)" srcset="assets/images/contacts_icons/star_mobile.jpg" />
+              <source media="(max-width: 499px)" srcset="assets/images/contacts_icons/star_mobile.jpg" />
               <img src="assets/images/contacts_icons/star.jpg" class="app-contacts__star-img" alt="star" />
             </picture>
           </div>
@@ -84,6 +84,33 @@
     grid-area: events;
   }
 
+  &__adress,
+  &__rent,
+  &__events {
+    display: inline-flex;
+    flex-direction: row;
+    align-self: center;
+    gap: 0 54px;
+    align-items: center;
+    margin-bottom: 67px;
+
+    @media @bw1170 {
+      flex-direction: column;
+      text-align: center;
+      max-width: 40%;
+      margin-top: 0;
+      margin-bottom: auto;
+    }
+
+    @media @bw500 {
+      flex-direction: row;
+      align-self: auto;
+      text-align: left;
+      gap: 10px 40px;
+      max-width: 100%;
+    }
+  }
+
   &__map {
     grid-area: map;
     width: 752px;
@@ -126,35 +153,8 @@
       align-items: start;
       justify-content: space-between;
       gap: 42px 0;
-      width: auto;
       margin-top: -50px;
       margin-left: 0;
-    }
-  }
-
-  &__adress,
-  &__rent,
-  &__events {
-    display: inline-flex;
-    flex-direction: row;
-    align-self: center;
-    gap: 0 54px;
-    align-items: center;
-    margin-bottom: 67px;
-
-    @media @bw1170 {
-      flex-direction: column;
-      text-align: center;
-      max-width: 40%;
-      margin-top: 0;
-      margin-bottom: auto;
-    }
-
-    @media @bw500 {
-      flex-direction: row;
-      align-self: auto;
-      text-align: left;
-      gap: 10px 40px;
     }
   }
 
@@ -167,6 +167,11 @@
   &__star-pic {
     width: 100%;
     height: 100%;
+
+    @media @bw500 {
+      min-width: 85px;
+      min-height: 85px;
+    }
   }
 
   &__text {
@@ -220,13 +225,19 @@
       max-width: 200px;
     }
 
+    @media @bw1170 {
+      max-width: none;
+    }
+
     @media @bw768 {
       max-width: 180px;
     }
 
-    @media @bw1170 {
-      max-width: none;
+    @media @bw500 {
+      max-width: 170px;
     }
+
+
   }
 
   &__details {
@@ -244,48 +255,88 @@
     }
   }
 
-  &__decor-text {
+  /* &__decor-text {
+    display: block;
     text-align: right;
     margin-top: 170px;
+    margin-left: -60px;
+    margin-bottom: 100px;
+    font-family: @font3;
+    font-weight: 700;
+    font-size: 128px;
+    width: 110%;
+    text-wrap: nowrap;
+
+    @media @bw1660 {
+      font-size: 120px;
+    }
+
+    @media @bw1340 {
+      margin-left: -40px;
+      font-size: 90px;
+    }
+
+    @media @bw960 {
+      font-size: 72px;
+      text-wrap: wrap;
+    }
+
+    @media @bw768 {
+      font-size: 65px;
+    }
+
+    @media @bw700 {
+      font-size: 55px;
+    }
+
+    @media @bw700 {
+      margin-top: 50px;
+      font-size: 48px;
+    }
+
+    @media @bw500 {
+      font-size: 38px;
+    }
+    @media @bw400 {
+      width: 130%;
+      font-size: 36px;
+      
+    }
+  } */
+  &__decor-text {
+    text-align: right;
+    margin: 90px auto 70px;
     display: table;
     margin-left: auto;
     margin-right: auto;
     font-family: @font3;
     font-weight: 700;
     font-size: 95px;
-
     @media @bw1660 {
       font-size: 75px;
+      margin: 75px auto;
     }
-
     @media @bw1340 {
       font-size: 65px;
     }
-
     @media @bw1170 {
       font-size: 58px;
     }
-
     @media @bw1020 {
       font-size: 44px;
     }
-
     @media @bw768 {
       font-size: 50px;
       text-align: center;
     }
-
     @media @bw600 {
       font-size: 40px;
     }
-
     @media @bw500 {
       font-size: 34px;
     }
-
     @media @bw400 {
       font-size: 25px;
-      margin-bottom: -20px;
     }
   }
 }

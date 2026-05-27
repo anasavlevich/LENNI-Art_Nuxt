@@ -85,6 +85,11 @@ const { checked, errorMessage, handleChange } = useField(
 
         @media @bw1020 {
             text-wrap: wrap;
+            width: 150%;
+        }
+
+        @media @bw768 {
+            width: 100%;
         }
 
         &--s {

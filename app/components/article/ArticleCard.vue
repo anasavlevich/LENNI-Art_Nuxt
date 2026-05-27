@@ -15,7 +15,7 @@
             <a href="#" class="article-card__title-link">
                 <span class="article-card__title">{{ data.title }}</span>                
                 <button type="button" class="more-btn article-card__arrow">                    
-                    <SvgIcon class="more-btn__arrow" name="arrow" width="92" height="62" />
+                    <SvgIcon class="more-btn__arrow arrow__icon" name="arrow" width="92" height="62" />
                 </button>
             </a>
             <p class="article-card__description">{{data.description}}</p>
@@ -173,6 +173,9 @@ const date = computed(() => {
             min-width: 260px;
             margin-top: -20px;
         }
+         @media @bw370 {
+            min-width: 240px;
+         }
     }
 
     &__arrow {

@@ -98,13 +98,13 @@
     text-align: center;
     margin-bottom: 50px;
 
-    @media @bw1340 {
+    @media @bw1660 {
         width: 92%;
         margin-left: 40px;
     }
 
     @media @bw960 {
-        width: 94%;
+        width: 93%;
         margin-left: 30px;
         margin-bottom: 40px;
     }
@@ -122,6 +122,11 @@
         font-weight: 400;
         font-size: 22px;
         line-height: 30px;
+        @media @bw500 {
+            font-weight: 500;
+            font-size: 16px;
+        }
+
     }
 
     &__descr {
@@ -131,7 +136,7 @@
         align-self: flex-start;
         margin-bottom: 60px;
 
-        @media @bw1340 {
+        @media @bw1660 {
             margin-left: 30px;
             margin-right: 30px;
         }
@@ -189,11 +194,14 @@
         font-size: 18px;
         line-height: 1.39;
 
+        @media @bw960 {
+            font-size: 14px;
+        }
+
         @media @bw600 {
             width: 100%;
             text-align: center;
             font-weight: 600;
-            font-size: 14px;
         }
     }
 

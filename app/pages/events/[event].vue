@@ -22,14 +22,13 @@
       </div>
     </header>
     <div class="event__container">
-      <div class="content event__content" v-html="data.content"></div>
+      <div class="content event__content content" v-html="data.content"></div>
       <EventReserve class="event__reserve" />
     </div>
   </article>
 </template>
 
 <script setup>
-import EventReserve from '~/components/event/EventReserve.vue';
 
 const slug = computed(() => useRoute().params.event);
 const URL = computed(
@@ -131,6 +130,7 @@ const datetime = computed(() => {
 
   &__info1 {
     grid-area: details1;
+    text-align: right;
 
     &::before,
     &::after {
@@ -142,8 +142,8 @@ const datetime = computed(() => {
       background: #ffffff;
       background: linear-gradient(90deg,
           rgba(255, 255, 255, 0) 39%,
-          rgba(0, 0, 0, 1) 100%);
-
+          rgba(0, 0, 0, 1) 100%);          
+      
       @media @bw600 {
         width: 50%;
         align-self: flex-end;
@@ -151,7 +151,7 @@ const datetime = computed(() => {
     }
 
     @media @bw600 {
-      justify-self: right;
+      justify-self: right;      
     }
   }
 
@@ -183,7 +183,6 @@ const datetime = computed(() => {
   &__time {
     font-size: 30px;
     font-weight: 300;
-
     @media @bw960 {
       font-size: 18px;
     }

@@ -29,6 +29,7 @@
 
     @media @bw500 {
       margin-top: -40px;
+      margin-bottom: 70px;
     }
 
     @media @bw400 {
@@ -37,6 +38,7 @@
 
     @media @bw370 {
       margin-top: -70px;
+      margin-bottom: 50px;
     }
 
     &__title {

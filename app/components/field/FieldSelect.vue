@@ -86,11 +86,6 @@ const onSelect = (option) => {
         }
 
         &__select {
-            top: 0;
-            right: 0;
-            height: 55px;
-            padding: 0;
-            border-radius: 0 5px 5px 0;
 
             &::before,
             &::after {
@@ -100,7 +95,7 @@ const onSelect = (option) => {
                 width: 8px;
                 height: 2px;
                 border: none;
-                margin: -2px 0 0;
+                margin: 7px 0 0;
                 background-color: @black;
                 transition: transform 0.2s;
             }
@@ -134,11 +129,19 @@ const onSelect = (option) => {
 
             @media @bw500 {
                 padding: 8px 40px 0 12px;
+                font-size: 14px;
+
             }
+
         }
 
         &__single {
             padding: 0;
+            padding-top: 2px;
+            @media @bw500 {
+                font-size: 14px;
+
+            }
         }
 
         &__option {
@@ -146,6 +149,7 @@ const onSelect = (option) => {
 
             @media @bw500 {
                 padding: 12px;
+                font-size: 14px;
             }
 
             &--highlight {

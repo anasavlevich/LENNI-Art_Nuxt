@@ -56,8 +56,12 @@ const onSubmit = () => {
     font-size: 16px;
     line-height: 22px;
 
+    @media @bw650 {
+      margin-left: 25px;
+    }
+
     @media @bw500 {
-      margin: 0 0 15px;
+      margin: 0 40px 15px;
       font-weight: 400;
       font-size: 13px;
       line-height: 18px;
@@ -74,6 +78,7 @@ const onSubmit = () => {
       display: grid;
       grid-template-areas: "input btn";
       grid-template-columns: 80% 23%;
+      width: 105%;
     }
 
     @media @bw600 {
@@ -82,11 +87,16 @@ const onSubmit = () => {
 
     @media @bw500 {
       grid-template-columns: 72% 30%;
+      width: 110%;
+    }
+
+    @media @bw400 {
+      width: 112%;
     }
 
     @media @bw370 {
-      grid-template-columns: 50% 30%;
-      max-width: fit-content;
+      grid-template-columns: 65% 35%;
+      width: 115%;
     }
   }
 
@@ -100,6 +110,15 @@ const onSubmit = () => {
   &__input {
     border-radius: 0;
     max-height: 49px;
+    @media @bw400 {
+      font-size: 12px;
+    }
+  }
+
+  &__error {
+    @media @bw650 {
+      padding-left: 10px;
+    }
   }
 
   &__submit {
@@ -128,12 +147,16 @@ const onSubmit = () => {
     }
 
     @media @bw400 {
-      padding-left: 10px;
+      padding-left: 18px;
+      font-size: 12px;
     }
   }
 
   &__check {
     margin-left: 17px;
+    @media @bw650 {
+      margin-left: 25px;
+    }
   }
 
   &__check-caption {
@@ -142,11 +165,17 @@ const onSubmit = () => {
     font-size: 14px;
 
     @media @bw370 {
-      max-width: 260px;
+      &.check__caption--s {
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 15px;
+        width: 260px;
+        margin-top: -4px;
+      }
     }
   }
   &__check-error {
-    margin-left: -25px;
+    margin-left: -25px;    
   }
 }
 </style>

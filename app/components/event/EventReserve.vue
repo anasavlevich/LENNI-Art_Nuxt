@@ -9,7 +9,8 @@
             <div class="event-reserve__scheme-container">
                 <h4 class="event-reserve__scheme-title">Сцена</h4>
                 <div class="event-reserve__scheme-wrapper">
-                    <EventScene :checks="checks" :values="values" @tableClick="OnTableClick" class="event-reserve__scene" />
+                    <EventScene :checks="checks" :values="values" @tableClick="OnTableClick"
+                        class="event-reserve__scene" />
                 </div>
             </div>
         </div>
@@ -29,7 +30,7 @@
                     <div class="event-reserve__sum" data-currency="₽">{{ blackCost }}</div>
                 </div>
             </div>
-            <div class="event-reserve__total" data-caption="Сумма " data-currency=" ₽">
+            <div class="event-reserve__total" data-caption="Сумма&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" data-currency=" ₽">
                 {{ redCost + blackCost }}
             </div>
             <button type="submit" class="btn btn--red event-reserve__submit">
@@ -82,20 +83,20 @@ const checks = ref({
     11: {},
 })
 const price = ref({ red: 1400, black: 1250 });
-const {submitCount, handleSubmit,  setFieldValue, values} = useForm({
+const { submitCount, handleSubmit, setFieldValue, values } = useForm({
     initialValues: {
         table: []
     }
 })
 const black = computed(() => {
-    return Array.isArray(values.table) ? values.table.reduce(function(sum, current) {
-        return sum + (checks.value[current]?.red? 0 : 1)
+    return Array.isArray(values.table) ? values.table.reduce(function (sum, current) {
+        return sum + (checks.value[current]?.red ? 0 : 1)
     }, 0) : 0
 })
 const blackCost = computed(() => black.value * price.value.black)
 const red = computed(() => {
-    return Array.isArray(values.table) ? values.table.reduce(function(sum, current) {
-        return sum + (checks.value[current]?.red? 1 : 0)
+    return Array.isArray(values.table) ? values.table.reduce(function (sum, current) {
+        return sum + (checks.value[current]?.red ? 1 : 0)
     }, 0) : 0
 })
 const redCost = computed(() => red.value * price.value.red)
@@ -103,15 +104,15 @@ const onSubmit = handleSubmit(SubmitValues => {
     console.log(SubmitValues)
 })
 const OnTableClick = (table) => {
-if (checks.value[table]?.disabled) return;
-const currentArray = Array.isArray(values.table) ? values.table : [];
-let newArray;
-if (currentArray.includes(table)) {
-    newArray = currentArray.filter((check) => check !== table)
-} else {
-    newArray = [...currentArray, table]
-}
-setFieldValue("table", newArray);
+    if (checks.value[table]?.disabled) return;
+    const currentArray = Array.isArray(values.table) ? values.table : [];
+    let newArray;
+    if (currentArray.includes(table)) {
+        newArray = currentArray.filter((check) => check !== table)
+    } else {
+        newArray = [...currentArray, table]
+    }
+    setFieldValue("table", newArray);
 }
 </script>
 
@@ -128,6 +129,7 @@ setFieldValue("table", newArray);
     @media @bw1340 {
         gap: 65px 6.5%;
         grid-template-columns: 401px calc(93.5% - 401px);
+        margin-bottom: -30px;
     }
 
     @media @bw1020 {
@@ -146,6 +148,7 @@ setFieldValue("table", newArray);
             "legend"
             "checks"
             "order";
+        margin-bottom: -50px;
     }
 
     &__section-title {
@@ -222,6 +225,11 @@ setFieldValue("table", newArray);
         line-height: 22px;
         text-align: center;
         text-transform: uppercase;
+
+        @media @bw960 {
+            font-weight: 700;
+            font-size: 11px;
+        }
     }
 
     &__scheme-wrapper {
@@ -260,6 +268,10 @@ setFieldValue("table", newArray);
         margin-bottom: 16px;
         font-weight: 400;
         font-size: 16px;
+
+        @media @bw400 {
+            font-size: 14px;
+        }
     }
 
     &__qty {
@@ -286,6 +298,7 @@ setFieldValue("table", newArray);
             content: attr(data-currency);
         }
 
+        align-self: center;
         margin-top: 10px;
         font-weight: 600;
         font-size: 20px;
@@ -297,7 +310,12 @@ setFieldValue("table", newArray);
         min-width: 280px;
         max-width: 406px;
 
+        @media @bw1660 {
+            width: 405px;
+        }
+
         @media @bw960 {
+            width: 100%;
             align-self: center;
             max-width: 388px;
         }

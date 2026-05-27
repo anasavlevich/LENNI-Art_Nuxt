@@ -130,6 +130,9 @@
       @media @bw768 {
         width: 100%;
       }
+      @media @bw650 {
+        margin-left: -36px;
+      }
     }
     &__vault {
       display: flex;
@@ -238,6 +241,7 @@
       }
       @media @bw768 {
         margin-top: 7px;
+        font-size: 14px;
       }
     }
     &__devs-icon {
@@ -245,6 +249,9 @@
       top: 4px;
       margin-left: 15px;
       top: 15px;
+      @media @bw400 {
+        width: 60px;
+      }
     }
   }
 </style>

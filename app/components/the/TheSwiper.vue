@@ -118,10 +118,6 @@ const props = defineProps({
         @media @bw1340 {
             width: 300px;
         }
-
-        @media @bw768 {
-            margin: 60px auto 0;
-        }
     }
 
     .swiper-arrow-next,
@@ -150,18 +146,24 @@ const props = defineProps({
         width: auto;
         margin: 0 auto;
         padding: 0 15px;
+        @media @bw960 {
+            padding: 0 0;
+        }
     }
 
     .swiper-pagination-bullet {
         width: 15px;
         height: 2px;
-        margin: 2px 3px;
+        margin: 2px 3px !important;
         border-top: 5px solid transparent;
         border-bottom: 5px solid transparent;
         border-radius: 2px;
         background-color: @gray_dark;
         background-clip: padding-box;
         opacity: 1;
+        @media @bw960 {
+            width: 8px;
+        }
 
         &.swiper-pagination-bullet-active {
             background-color: @black;

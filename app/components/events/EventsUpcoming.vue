@@ -202,6 +202,9 @@ if (data?.value) list.value = data.value;
     }
 
     &__link {
+        align-self: flex-end;
+        text-align: end;
+        margin-right: 0;
         font-family: @font1;
         font-weight: 600;
         font-size: 16px;
@@ -217,7 +220,7 @@ if (data?.value) list.value = data.value;
         }
 
         @media @bw370 {
-            margin-top: 0;
+            margin-top: 30px;
             font-size: 14px;
         }
     }

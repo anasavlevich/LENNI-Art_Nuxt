@@ -42,7 +42,7 @@
                     },
                 ]" :initialValue="'20'" :rules="{ required: true }" :submitCount="submitCount"
                     label="Планируемое количество посетителей:" placeholder="Выберите количество"
-                    class="events-form__field" />
+                    class="events-form__field events-form__select" />
                 <FieldDate name="date" label="Дата проведения:" :rules="{ required: true }"
                     :submitCount="submitCount" />
             </div>
@@ -55,7 +55,7 @@
                         :submitCount="submitCount" class="events-form__field events-form__field--w50" />
                     <FieldInput name="last_name" label="Фамилия" placeholder="Фамилия" :rules="{ required: true }"
                         :submitCount="submitCount" class="events-form__field events-form__field--w50" />
-                    <FieldInput name="phone" label="Телефон" placeholder="+7 (___) ___-__-__"
+                    <FieldInput name="phone" label="Телефон" placeholder="+7 (___) ___ __ __"
                         :rules="{ required: true, phone: true }" mask="+7 (###) ###-##-##" :submitCount="submitCount"
                         class="events-form__field events-form__field--w50" />
                     <FieldInput name="email" label="Email" type="email" placeholder="Email"
@@ -111,6 +111,11 @@ const onSubmit = handleSubmit((submitValues) => {
         @media @bw960 {
             gap: 0 30px;
         }
+
+        @media @bw400 {
+            width: 105%;
+        }
+
     }
 
     &__field,
@@ -134,6 +139,22 @@ const onSubmit = handleSubmit((submitValues) => {
 
         @media @bw768 {
             width: 100%;
+            margin-bottom: 20px;
+        }
+        @media @bw400 {
+            width: 105%;
+        }
+    }
+
+    &__select {
+        @media @bw1170 {
+            min-width: 98%;
+        }
+    }
+
+    &__section {
+        @media @bw960 {
+            margin-top: -6%;
         }
     }
 
@@ -145,6 +166,10 @@ const onSubmit = handleSubmit((submitValues) => {
         @media @bw500 {
             flex-direction: column;
             gap: 30px 0;
+        }
+
+        @media @bw400 {
+            margin-left: 18px;
         }
     }
 

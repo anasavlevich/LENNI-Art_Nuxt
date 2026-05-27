@@ -28,7 +28,7 @@ const props = defineProps({
     name: {
         type: String,
         required: true,
-    },
+    }
 });
 const store = useStore();
 const isActive = computed(() => {
@@ -54,6 +54,10 @@ const close = () => {
     background-color: rgba(28, 27, 27, 0.4);
     backdrop-filter: blur(50px);
     overflow-y: auto;
+    @media @bw960 {
+        padding-right: 13%;
+        padding-left: 5%;
+    }
 
     &__wrapper {
         box-sizing: border-box;
