@@ -38,10 +38,8 @@
                     как это было классно.
                 </p>
                 <a href="#" class="app-about__link">
-                    <span class="app-about__link-text">Смотреть</span>                    
-                    <button type="button" class="app-about__link-arrow arrow">
-                        <SvgIcon class="arrow__icon" name="arrow" width="91" height="60" />                        
-                    </button>
+                    <span class="app-about__link-text">Смотреть</span>
+                    <SvgIcon class="arrow__icon" name="arrow" width="91" height="60" />
                 </a>
             </div>
         </div>
@@ -261,12 +259,6 @@
     font-size: 16px;
     line-height: 22px;
     text-decoration: none;
-  }
-
-  &__link-arrow {
-    color: inherit;
-    background-color: transparent;
-    border-color: transparent;
   }
 }
 

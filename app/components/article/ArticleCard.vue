@@ -13,10 +13,8 @@
         <div class="article-card__info">
             <time :datetime="data.date" class="article-card__time">{{ date }}</time>
             <a href="#" class="article-card__title-link">
-                <span class="article-card__title">{{ data.title }}</span>                
-                <button type="button" class="more-btn article-card__arrow">                    
-                    <SvgIcon class="more-btn__arrow arrow__icon" name="arrow" width="92" height="62" />
-                </button>
+                <span class="article-card__title">{{ data.title }}</span>
+                <SvgIcon class=" article-card__arrow arrow__icon" name="arrow" width="92" height="62" />
             </a>
             <p class="article-card__description">{{data.description}}</p>
         </div>
@@ -185,7 +183,6 @@ const date = computed(() => {
         background-color: transparent;
         border: none;
         color: inherit;
-        transform: rotate(-90deg);
         transition: none;
 
         @media @bw500 {
