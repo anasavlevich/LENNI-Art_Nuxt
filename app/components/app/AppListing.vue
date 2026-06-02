@@ -38,7 +38,7 @@ const props = defineProps({
 });
 const listClass = computed(() => props.grid === 'column' ? "app-listing__column-list" : "app-listing__list")
 const list = ref([]);
-const { data } = props.url ? await useAsyncData('list-${props.url}', () => {
+const { data } = props.url ? await useAsyncData(`list-${props.url}`, () => {
     return $fetch(props.url);
 }) : { data: null };
 
