@@ -96,7 +96,7 @@ const onSubmit = () => {
 
     @media @bw370 {
       grid-template-columns: 65% 35%;
-      width: 115%;
+      width: 118%;
     }
   }
 
