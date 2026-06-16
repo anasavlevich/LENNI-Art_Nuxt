@@ -41,10 +41,10 @@
       margin-bottom: 50px;
     }
 
-    &__title {
+    & > .app-listing__title {
       @media @bw370 {
         min-width: 280px;
-        margin-left: -12%;
+        margin-left: -10%;
       }
     }
   }

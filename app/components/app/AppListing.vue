@@ -77,6 +77,7 @@ if (data?.value) list.value = data.value;
         @media @bw370 {
             min-width: 115%;
             margin-left: -8%;
+
         }
     }
 
@@ -195,6 +196,7 @@ if (data?.value) list.value = data.value;
 
 .more-btn__arrow {
     transform: rotate(90deg);
+
     @media @bw960 {
         width: 67px;
     }
