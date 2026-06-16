@@ -7,7 +7,7 @@
           <time v-if="datetime" :datetime="data.date" class="event__time">
             {{ datetime.date }}
           </time>
-          <div class="event__info-text">{{ data.location }}</div>
+          <div class="event__info1-text">{{ data.location }}</div>
         </div>
         <picture class="event__picture">
           <source type="image/webp" :srcset="data.img_webp" />
@@ -186,6 +186,11 @@ const datetime = computed(() => {
     @media @bw960 {
       font-size: 18px;
     }
+  }
+
+  &__info1-text {
+    align-self: flex-end;
+    text-wrap: wrap;
   }
 
   &__info2-text {

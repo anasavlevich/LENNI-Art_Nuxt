@@ -1,8 +1,8 @@
 <template>
   <form class="subscribe-form" novalidate @submit.prevent="onSubmit">
-    <h4 class="subscribe-form__title">
+    <h2 class="subscribe-form__title">
       Подпишись и будь в курсе происходящего
-    </h4>
+    </h2>
     <div class="subscribe-form__wrapper">
       <div class="subscribe-form__field-wrapper">
         <input v-model="email" type="email" placeholder="Email" class="field__input subscribe-form__input" required />

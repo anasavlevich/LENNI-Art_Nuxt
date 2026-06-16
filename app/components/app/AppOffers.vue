@@ -1,6 +1,6 @@
 <template>
     <section class="app-offers">
-        <h4 class="app-offers__title">Я хочу:</h4>
+        <h2 class="app-offers__title">Я хочу:</h2>
         <div class="app-offers__btns">
             <button type="button" class="app-offers__btn btn btn--red" @click="openPopup()">
                 Провести мероприятие

@@ -1,8 +1,8 @@
 <template>
     <section>
-        <h5 class="events-table__title section-title">
+        <h4 class="events-table__title section-title">
             дополнительные услуги
-        </h5>
+        </h4>
         <p class="events-table__descr">
             Перед запуском проекта, мы подготавливаем подробную смету и
             согласуем ее с клиентом. Убедившись, что все пожеланию учтены и мы
